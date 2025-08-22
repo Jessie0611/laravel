@@ -40,3 +40,13 @@ Route::prefix("portfolio")->group(function () {
         return view('organization');
     });
 });
+
+//GET
+Route::get('/', function () {
+    return view('home');
+});
+
+//POST
+Route::post("/formsubmitted", function () {
+    return "Form submitted!";
+});

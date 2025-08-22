@@ -15,8 +15,19 @@
 
 <body>
     <h1>Home</h1>
-    <p> .blade is a template that allows for you to create shortcuts</p>
 
+
+    <form action="{{ url('/formsubmitted')}}">
+        @csrf
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+        <br> <br>
+        <label for="email">E-Mail:</label>
+        <input type="text" id="email" name="email" placeholder="E-Mail@E-mail.com" required>
+        <br> <br> <br>
+        <button type="submit">Submit</button>
+
+    </form>
 </body>
 
 </html>

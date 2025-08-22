@@ -31,10 +31,12 @@ Route::get('/portfolio', function () {
     return view('portfolio');
 });
 
-Route::get('/portfolio/company', function () {
-    return view('company');
-});
+Route::prefix("portfolio")->group(function () {
+    Route::get('/portfolio/company', function () {
+        return view('company');
+    });
 
-Route::get('/portfolio/organization', function () {
-    return view('organization');
+    Route::get('/portfolio/organization', function () {
+        return view('organization');
+    });
 });

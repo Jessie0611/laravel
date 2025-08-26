@@ -1,5 +1,7 @@
 <?php
 //RESOURCES === TESTING VERSION -  Blade templating (clean HTML + PHP views)
+//@csrf LARAVEL SECURITY
+
 ?>
 <!DOCTYPE html>
 
@@ -16,8 +18,18 @@
 <body>
     <h1>Home</h1>
 
+    @if ($errors->any())
+    <div style="color: red;">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 
-    <form action="{{ route('formsubmitted')}}">
+
+    <form action="{{ route('formsubmitted')}}" method="POST">
         @csrf
         <label for="name">Name:</label>
         <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>

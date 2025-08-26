@@ -1,11 +1,12 @@
 <?php
-
+//Routing (handling URLs easily)
 use Illuminate\Support\Facades\Route;
 // ^we want to grab a certain class call routes
+use Illuminate\Http\Request;
 
 //6 Different Types Of Routes: POST, GET, PUT, DELETE, patch, options
 
-//Get rout example
+/*Get rout example
 Route::get('/', function () {
     return view('home');
 });
@@ -40,13 +41,20 @@ Route::prefix("portfolio")->group(function () {
         return view('organization');
     });
 });
+*/
 
 //GET
 Route::get('/', function () {
     return view('home');
 });
 
+
 //POST
 Route::post("/formsubmitted", function () {
-    return "Form submitted!";
-});
+    $request->validate([
+        'fullname' => 'required|min:3|max:30',
+        'email' => 'required|min:10|max:30|email',
+    ]);
+    /* $fullname = $request->input("fullname");
+    $email = $request->input("email");*/
+})->name("formsubmitted");

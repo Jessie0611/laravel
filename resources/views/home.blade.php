@@ -1,5 +1,5 @@
 <?php
-//RESOURCES === TESTING VERSION
+//RESOURCES === TESTING VERSION -  Blade templating (clean HTML + PHP views)
 ?>
 <!DOCTYPE html>
 
@@ -17,10 +17,10 @@
     <h1>Home</h1>
 
 
-    <form action="{{ url('/formsubmitted')}}">
+    <form action="{{ route('formsubmitted')}}">
         @csrf
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" required>
+        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
         <br> <br>
         <label for="email">E-Mail:</label>
         <input type="text" id="email" name="email" placeholder="E-Mail@E-mail.com" required>

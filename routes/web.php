@@ -38,6 +38,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
 // POST Route
 Route::post("/formsubmitted", function (Request $request) {
     $request->validate([

@@ -1,45 +1,27 @@
-<?php
-//RESOURCES === TESTING VERSION -  Blade templating (clean HTML + PHP views)
-//@csrf LARAVEL SECURITY
+@extends('layouts.default')
 
-?>
-<!DOCTYPE html>
+@section('header')
+<h2>This is the header</h2>
+@include('sidemenu')
+@endsection
 
-<html lang="en">
+@section('main')
+<h1>Home</h1>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
+<form action="{{ route('formsubmitted') }}" method="POST">
+    @csrf
+    <label for="fullname">Name:</label>
+    <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
+    <br><br>
 
-<body>
-    <h1>Home</h1>
+    <label for="email">E-Mail:</label>
+    <input type="email" id="email" name="email" placeholder="E-Mail@example.com" required>
+    <br><br><br>
 
-    @if ($errors->any())
-    <div style="color: red;">
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
+    <button type="submit">Submit</button>
+</form>
+@endsection
 
-
-    <form action="{{ route('formsubmitted')}}" method="POST">
-        @csrf
-        <label for="name">Name:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Full Name" required>
-        <br> <br>
-        <label for="email">E-Mail:</label>
-        <input type="text" id="email" name="email" placeholder="E-Mail@E-mail.com" required>
-        <br> <br> <br>
-        <button type="submit">Submit</button>
-
-    </form>
-</body>
-
-</html>
+@section('footer')
+<h2>This is the footer</h2>
+@endsection

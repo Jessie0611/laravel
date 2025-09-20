@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <img src="{{ asset('images/tea.png') }}" alt="">
+        <img src="{{ asset('images/tea.jpg') }}" alt="">
         @yield('header')
     </header>
 

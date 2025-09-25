@@ -7,7 +7,7 @@
 
 @section('main')
 <h1>Home</h1>
-
+yu
 <form action="{{ route('formsubmitted') }}" method="POST">
     @csrf
     <label for="fullname">Name:</label>

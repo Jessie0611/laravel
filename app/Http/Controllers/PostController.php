@@ -11,10 +11,9 @@ class PostController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-        $post = Post::all(); //all the post in our database table
-        return view('post.index', compact('posts')); //compact - pass in array
+    {  //show all the post in our database table
+        $posts = Post::all();
+        return view('posts.index', compact('posts')); //compact - pass in array
     }
 
     /**

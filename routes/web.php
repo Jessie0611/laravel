@@ -31,12 +31,15 @@ Route::get('/portfolio/organization', function () {
 });
 */
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('home');
 });
+Route::resource('posts', PostController::class);
+//create route based off a resource (built in resource feature), creates routes for all the diff methods in PostController
 
 Route::get('/contact', function () {
     return view('contact');

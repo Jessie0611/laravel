@@ -13,6 +13,8 @@ class PostController extends Controller
     public function index()
     {
         //
+        $post = Post::all(); //all the post in our database table
+        return view('post.index', compact('posts')); //compact - pass in array
     }
 
     /**

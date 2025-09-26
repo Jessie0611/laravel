@@ -1,15 +1,14 @@
+@import 'tailwindcss';
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 20px;
     color: #182447;
     background-color: #f1eddc;
-    line-height: 1.6;
 }
 
 .content {
@@ -17,30 +16,37 @@ body {
     margin: auto;
 }
 
-h1 {
-    color: #2c3f76;
-}
-
-h4 {
-    color: #8683a3;
-}
-
 p {
-    color: #2e3a59;
-    font-weight: 500;
+    color: #182447;
+    font-style: bold;
 }
 
 img:hover {
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    opacity: 80%;
+}
+
+/* ------ HEADER ------ */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2 2px 1px rgba(160, 156, 194, .4);
+    border-radius: 8px;
+}
+
+.heroImg {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .navLinks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 0.8rem;
-    padding: 8px;
+    padding: 10px;
 }
 
 
@@ -60,25 +66,38 @@ img:hover {
 
 }
 
-/* ------ HEADER ------ */
+/* ------ COLUMNS ------ */
 
-.header {
+h1 {
+    color: #2c3f76;
+}
+
+.row {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(160, 156, 194, 0.2);
-    border-radius: 10px;
-    margin-bottom: 2rem;
+    gap: 10px;
+
+    /* space between columns */
 }
 
-.heroImg {
-    max-width: 270px;
-    height: auto;
-    margin: 1rem 0;
+.leftColumn {
+    flex: 3;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #182447;
 }
 
+.rightColumn {
+    flex: 1;
+    margin-top: 20px;
+    background-color: #f4f2ef;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #182447;
+}
+
+h4 {
+    color: #A09CC2;
+}
 
 /* ------ CREATE ACC FORM ------ */
 
@@ -126,6 +145,50 @@ img:hover {
 
 }
 
+/* ------ ACCOUNT PAGE ------ */
+
+.account {
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 2rem auto;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #A09CC2;
+    text-align: center;
+}
+
+.account h1 {
+    color: #2c3f76;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.account p {
+    font-size: 1.1rem;
+    color: #182447;
+}
+
+.post-summary {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-summary img {
+    max-width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.post-summary {
+    border: 1px solid #A09CC2;
+    padding: .7rem;
+    margin-bottom: .7rem;
+}
+
+.delete {
+    float: right;
+}
 
 /* ------ ADD POST ------ */
 .coverImage {
@@ -239,30 +302,91 @@ img:hover {
 
 .delete {
     padding: 0.3rem 0.6rem;
-    background-color: #e17878;
+    background-color: #C95F5F;
     color: white;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 }
 
-.edit {
-    padding: 0.3rem 0.6rem;
-    background-color: #182447;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+.readMore {
+    display: inline-block;
+    margin-bottom: 2rem;
     text-decoration: none;
+    color: #A09CC2;
+    font-size: large;
+}
+
+/* ------   CONTACT FORM ------ */
+.contact {
+    padding: 1rem;
+    background-color: #f5f5f5;
+    max-width: 1000px;
+    margin: 2rem auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px #A09CC2;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.contactForm input {
+    padding: 0.4rem;
+    font-size: 1.1rem;
+    border: 1px solid #ede9da;
+    border-radius: 4px;
+}
+
+.contactForm textarea {
+    padding: 0.4rem;
+    font-size: 1.1rem;
+    border: 1px solid #ede9da;
+    border-radius: 4px;
+    min-height: 200px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.contactForm button {
+    padding: 0.4rem;
+    font-weight: bold;
+    background-color: #A09CC2;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contactForm button:hover {
+    background-color: #182447;
+    color: #ffffff;
+
 }
 
 /* ------ FOOTER ------ */
 .footer {
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     background: #A09CC2;
     color: #f1eddc;
     margin-top: 20px;
     box-shadow: 0 2px 5px #182447;
     border-radius: 8px;
+}
+
+
+/* --- Responsive for smaller screens --- */
+@media screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .leftColumn,
+    .rightColumn {
+        width: 100%;
+        padding: 0;
+    }
 }

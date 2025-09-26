@@ -1,38 +1,7 @@
 <?php
-/*Get rout example
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
 
-//Parameters using routes
-Route::get('/portfolio/{firstName}/{lastName}', function ($firstName, $lastName) {
-    return $firstName . " " . $lastName;
-});
-
-//named routes
-Route::get('/test', function () {
-    return "this is a test";
-});
-
-//grouped routes
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
-Route::prefix("portfolio")->group(function () {
-    Route::get('/portfolio/company', function () {
-        return view('company');
-    });
-Route::get('/portfolio/organization', function () {
-        return view('organization');
-    });
-});
-*/
-
-use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -57,3 +26,8 @@ Route::post("/formsubmitted", function (Request $request) {
 
     return "Your full name is {$fullname}, and your email is {$email}!";
 })->name("formsubmitted");
+
+use App\Http\Controllers\AccountController;
+
+Route::get('/account', [AccountController::class, 'index'])->middleware('auth')->name('account');
+Route::post('/logout', [AccountController::class, 'logout'])->name('logout');

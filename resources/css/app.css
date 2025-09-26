@@ -1,46 +1,50 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     padding: 20px;
     color: #182447;
     background-color: #f1eddc;
-    line-height: 1.6;
 }
 
-.content {
+.body {
     width: 90%;
     margin: auto;
 }
 
-h1 {
-    color: #2c3f76;
-}
-
-h4 {
-    color: #8683a3;
-}
-
 p {
-    color: #2e3a59;
-    font-weight: 500;
+    color: #182447;
+    font-style: bold;
 }
 
 img:hover {
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+    opacity: 80%;
+}
+
+/* ------ HEADER ------ */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 2 2px 1px rgba(160, 156, 194, .4);
+    border-radius: 8px;
+}
+
+.heroImg {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .navLinks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 0.8rem;
-    padding: 8px;
+    padding: 10px;
 }
 
 
@@ -60,70 +64,12 @@ img:hover {
 
 }
 
-/* ------ HEADER ------ */
-
-.header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1.5rem;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(160, 156, 194, 0.2);
-    border-radius: 10px;
-    margin-bottom: 2rem;
+h1 {
+    color: #2c3f76;
 }
 
-.heroImg {
-    max-width: 270px;
-    height: auto;
-    margin: 1rem 0;
-}
-
-
-/* ------ CREATE ACC FORM ------ */
-
-.create {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 1rem;
-    background-color: #f5f5f5;
-    max-width: 1000px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px #A09CC2;
-}
-
-.createAccountForm {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.createAccountForm input {
-    padding: 0.2rem;
-    font-size: 1.1rem;
-    max-width: 300px;
-    border: 1px solid #ede9da;
-    border-radius: 4px;
-}
-
-.createAccountForm button {
-    padding: 0.4rem;
-    font-weight: bold;
-    max-width: 110px;
-    background-color: #A09CC2;
-    color: #ffffff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-
-.createAccountForm button:hover {
-    background-color: #182447;
-    color: #ffffff;
-
+h4 {
+    color: #A09CC2;
 }
 
 
@@ -228,7 +174,7 @@ img:hover {
     margin: 2rem auto;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px #A09CC2;
+    box-shadow: 0 2px 5px #8582a4;
     text-align: center;
 }
 
@@ -238,8 +184,8 @@ img:hover {
 }
 
 .delete {
-    padding: 0.3rem 0.6rem;
-    background-color: #e17878;
+    padding: 0.4rem 0.6rem;
+    background-color: #d87979;
     color: white;
     border: none;
     border-radius: 3px;
@@ -253,12 +199,21 @@ img:hover {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    text-decoration: none;
 }
+
+
+.readMore {
+    display: inline-block;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: #A09CC2;
+    font-size: large;
+}
+
 
 /* ------ FOOTER ------ */
 .footer {
-    padding: 30px;
+    padding: 20px;
     text-align: center;
     background: #A09CC2;
     color: #f1eddc;
